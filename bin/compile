@@ -24,6 +24,7 @@ ENV_DIR=$3
 
   cd $BUILD_DIR
   SKIP_CORPUS=1 bundle exec rake assets:precompile | indent
+  SKIP_CORPUS=1 bundle exec rails webpacker:compile | indent
 
   echo "-----> Assets precompiled!"
   echo "-----> Saving Assets to Cache"
